@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <title>Cadastro Moto</title>
+</head>
+
+<body>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="/moto/cadastro">Cadastrar Moto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/carro/cadastro">Cadastrar Carro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/carros">Exibir Carros</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/motos">Exibir Motos</a>
+        </li>
+    </ul>
+
+
+  <div class="container mt-3">
+
+    <h2 class="text-center">Cadastrar moto</h2>
+    <hr>
+
+    <form th:object="${motoDto}" action="/moto" method="POST">
+      <!-- campo 1 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Descrição</span> <input type="text" th:field="*{descricao}"
+              class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- campo 2 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Marca</span> <input type="text" th:field="*{marca}" class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- campo 3 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Modelo</span> <input type="text" th:field="*{modelo}" class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- campo 4 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Ano</span> <input type="number" th:field="*{ano}" class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- campo 5 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">cor</span> <input type="text" th:field="*{cor}" class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- campo 6 -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Quilometragem</span> <input type="number" th:field="*{quilometragem}" class="form-control" required>
+          </div>
+        </div>
+      </div>
+
+      <input class="btn btn-success" type="submit" value="Salvar" />
+    </form>
+  </div>
+</body>
+</html>
